@@ -114,8 +114,17 @@
       KL.persist();
     });
     $('#optMic').addEventListener('change', (e) => { state.settings.micMode = e.target.value; KL.persist(); });
+    let resetArmed = false;
     $('#btnReset').addEventListener('click', () => {
-      if (!window.confirm('確定清除所有星星、貼紙與統計？')) return;
+      const btn = $('#btnReset');
+      if (!resetArmed) {
+        resetArmed = true;
+        btn.textContent = '再按一次確認清除';
+        setTimeout(() => { resetArmed = false; btn.textContent = '清除進度'; }, 4000);
+        return;
+      }
+      resetArmed = false;
+      btn.textContent = '清除進度';
       KL.resetProgress();
       $('#settings').close();
       KL.go('home');

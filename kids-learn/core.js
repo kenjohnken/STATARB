@@ -316,7 +316,7 @@
     const alive = KL.alive();
     const r = await recordClip(3000);
     if (!r.ok) {
-      KL.showMsg(r.error === 'denied' ? '麥克風被封鎖了，請在瀏覽器網址列允許使用麥克風' : '這個瀏覽器無法錄音：' + r.error);
+      KL.showMsg(r.error === 'denied' ? '無法使用麥克風：可能是瀏覽器封鎖，或目前的預覽環境不支援' : '這個瀏覽器無法錄音：' + r.error);
       return { status: 'blocked' };
     }
     if (!alive()) { URL.revokeObjectURL(r.url); return { status: 'aborted' }; }
@@ -341,7 +341,7 @@
     }
     if (res.error === 'no-speech' || res.error === 'aborted') return { status: 'nospeech' };
     if (res.error === 'not-allowed' || res.error === 'service-not-allowed') {
-      KL.showMsg('麥克風被封鎖了，請在瀏覽器網址列允許使用麥克風');
+      KL.showMsg('無法使用麥克風：可能是瀏覽器封鎖，或目前的預覽環境不支援');
       return { status: 'blocked' };
     }
     KL.showMsg('語音辨識無法使用(' + res.error + ')，改用錄音回放');
