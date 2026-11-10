@@ -15,47 +15,17 @@
 <body>
 <div id="app">
   <header class="top">
-    <button id="btnHome" class="icon-btn" aria-label="首頁"><img data-ui="home" alt=""></button>
+    <button id="btnHome" class="icon-btn" aria-label="返回"><img data-ui="home" alt=""></button>
     <div class="star-count" aria-label="星星"><img data-ui="star" alt=""><span id="starCount">0</span></div>
+    <button id="btnLang" class="pill on lang-pill" aria-label="切換語言">中文</button>
     <button id="btnGear" class="icon-btn small" aria-label="家長設定"><img data-ui="gear" alt=""></button>
   </header>
 
-  <main>
-    <section id="home" class="screen">
-      <h1>小小學習樂園</h1>
-      <p class="sub">Little Learner</p>
-      <div id="catGrid" class="cat-grid"></div>
-    </section>
-
-    <section id="learn" class="screen hidden">
-      <div class="lang-toggle" role="group" aria-label="語言">
-        <button id="langZh" class="pill">中文</button>
-        <button id="langEn" class="pill">English</button>
-      </div>
-
-      <div class="card">
-        <button id="imgBtn" class="img-btn" aria-label="聽發音"><img id="wordImg" class="wordimg" alt=""></button>
-        <div id="wordMain" class="word-main"></div>
-        <div id="wordSub" class="word-sub"></div>
-      </div>
-
-      <div class="actions">
-        <button id="btnHear" class="big-btn hear" aria-label="聽"><img data-ui="speaker" alt=""></button>
-        <button id="btnSay" class="big-btn say" aria-label="跟我唸"><img data-ui="mic" alt=""></button>
-      </div>
-
-      <div id="heard" class="heard"></div>
-
-      <nav class="nav">
-        <button id="btnPrev" class="nav-btn" aria-label="上一個"><img data-ui="prev" alt=""></button>
-        <div id="dots" class="dots"></div>
-        <button id="btnNext" class="nav-btn" aria-label="下一個"><img data-ui="next" alt=""></button>
-      </nav>
-    </section>
-  </main>
+  <main id="view" class="view"></main>
 
   <div id="msg" class="msg" role="status" aria-live="polite"></div>
   <div id="fx" class="fx" aria-hidden="true"></div>
+  <div id="overlay" class="overlay hidden"></div>
 </div>
 
 <dialog id="gate">
@@ -91,6 +61,11 @@
 </dialog>
 
 <script src="words.js"></script>
+<script src="stories.js"></script>
+<script src="core.js"></script>
+<script src="learn.js"></script>
+<script src="games.js"></script>
+<script src="story.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

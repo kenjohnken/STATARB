@@ -1,6 +1,6 @@
 /* 離線快取: 同源 GET 請求採 stale-while-revalidate。改版時請調高 CACHE 版本號。 */
-const CACHE = 'kl-v1';
-const CORE = ['./', 'index.html', 'style.css', 'app.js', 'words.js', 'manifest.webmanifest'];
+const CACHE = 'kl-v2';
+const CORE = ['./', 'index.html', 'style.css', 'words.js', 'stories.js', 'core.js', 'learn.js', 'games.js', 'story.js', 'app.js', 'manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

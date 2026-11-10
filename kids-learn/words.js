@@ -63,5 +63,34 @@ window.KL_DATA = {
     }
   ],
   /* UI 用到的圖示(同樣放在 assets/twemoji/) */
-  ui: { home: '1f3e0', gear: '2699', star: '2b50', speaker: '1f50a', mic: '1f3a4', prev: '2b05', next: '27a1' }
+  ui: {
+    home: '1f3e0', gear: '2699', star: '2b50', speaker: '1f50a', mic: '1f3a4', prev: '2b05', next: '27a1',
+    learn: '1f4d6', find: '1f50d', memory: '1f3b4', story: '1f4da', book: '1f4d2', mixed: '1f308',
+    again: '1f501', check: '2705', trophy: '1f3c6', point: '1f449'
+  },
+  /* 貼紙：story 為 true 的是故事專屬貼紙，不會隨機發 */
+  stickers: [
+    { id: 'monkey', img: '1f412', zh: '小猴子', en: 'monkey', story: true },
+    { id: 'racecar', img: '1f3ce', zh: '賽車', en: 'race car', story: true },
+    { id: 'unicorn', img: '1f984', zh: '獨角獸', en: 'unicorn' },
+    { id: 'lion', img: '1f981', zh: '獅子', en: 'lion' },
+    { id: 'panda', img: '1f43c', zh: '熊貓', en: 'panda' },
+    { id: 'koala', img: '1f428', zh: '無尾熊', en: 'koala' },
+    { id: 'penguin', img: '1f427', zh: '企鵝', en: 'penguin' },
+    { id: 'butterfly', img: '1f98b', zh: '蝴蝶', en: 'butterfly' },
+    { id: 'dolphin', img: '1f42c', zh: '海豚', en: 'dolphin' },
+    { id: 'dinosaur', img: '1f996', zh: '恐龍', en: 'dinosaur' },
+    { id: 'turtle', img: '1f422', zh: '烏龜', en: 'turtle' },
+    { id: 'giraffe', img: '1f992', zh: '長頸鹿', en: 'giraffe' },
+    { id: 'zebra', img: '1f993', zh: '斑馬', en: 'zebra' },
+    { id: 'parrot', img: '1f99c', zh: '鸚鵡', en: 'parrot' },
+    { id: 'snail', img: '1f40c', zh: '蝸牛', en: 'snail' },
+    { id: 'bee', img: '1f41d', zh: '蜜蜂', en: 'bee' },
+    { id: 'rainbow', img: '1f308', zh: '彩虹', en: 'rainbow' },
+    { id: 'rocket', img: '1f680', zh: '火箭', en: 'rocket' },
+    { id: 'icecream', img: '1f366', zh: '冰淇淋', en: 'ice cream' },
+    { id: 'cake', img: '1f382', zh: '蛋糕', en: 'cake' },
+    { id: 'balloon', img: '1f388', zh: '氣球', en: 'balloon' },
+    { id: 'donut', img: '1f369', zh: '甜甜圈', en: 'donut' }
+  ]
 };
