@@ -1,0 +1,16 @@
+{
+  "name": "小小學習樂園",
+  "short_name": "學習樂園",
+  "description": "4-5 歲雙語(中文/英文)看圖跟讀學習",
+  "lang": "zh-Hant",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#dff3ff",
+  "theme_color": "#7cc8ff",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

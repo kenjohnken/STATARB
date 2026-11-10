@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#7cc8ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>小小學習樂園</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <button id="btnHome" class="icon-btn" aria-label="首頁"><img data-ui="home" alt=""></button>
+    <div class="star-count" aria-label="星星"><img data-ui="star" alt=""><span id="starCount">0</span></div>
+    <button id="btnGear" class="icon-btn small" aria-label="家長設定"><img data-ui="gear" alt=""></button>
+  </header>
+
+  <main>
+    <section id="home" class="screen">
+      <h1>小小學習樂園</h1>
+      <p class="sub">Little Learner</p>
+      <div id="catGrid" class="cat-grid"></div>
+    </section>
+
+    <section id="learn" class="screen hidden">
+      <div class="lang-toggle" role="group" aria-label="語言">
+        <button id="langZh" class="pill">中文</button>
+        <button id="langEn" class="pill">English</button>
+      </div>
+
+      <div class="card">
+        <button id="imgBtn" class="img-btn" aria-label="聽發音"><img id="wordImg" class="wordimg" alt=""></button>
+        <div id="wordMain" class="word-main"></div>
+        <div id="wordSub" class="word-sub"></div>
+      </div>
+
+      <div class="actions">
+        <button id="btnHear" class="big-btn hear" aria-label="聽"><img data-ui="speaker" alt=""></button>
+        <button id="btnSay" class="big-btn say" aria-label="跟我唸"><img data-ui="mic" alt=""></button>
+      </div>
+
+      <div id="heard" class="heard"></div>
+
+      <nav class="nav">
+        <button id="btnPrev" class="nav-btn" aria-label="上一個"><img data-ui="prev" alt=""></button>
+        <div id="dots" class="dots"></div>
+        <button id="btnNext" class="nav-btn" aria-label="下一個"><img data-ui="next" alt=""></button>
+      </nav>
+    </section>
+  </main>
+
+  <div id="msg" class="msg" role="status" aria-live="polite"></div>
+  <div id="fx" class="fx" aria-hidden="true"></div>
+</div>
+
+<dialog id="gate">
+  <form method="dialog" id="gateForm">
+    <p>家長確認：請計算</p>
+    <p class="gate-q" id="gateQ"></p>
+    <input id="gateA" type="number" inputmode="numeric" autocomplete="off">
+    <div class="dlg-actions">
+      <button type="button" id="gateCancel">取消</button>
+      <button type="submit" id="gateOk" class="primary">確定</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="settings">
+  <h2>家長設定</h2>
+  <label class="row"><input type="checkbox" id="optZhuyin"> 顯示注音</label>
+  <label class="row"><input type="checkbox" id="optHeard"> 顯示辨識結果(觀察用)</label>
+  <label class="row">語速 <input type="range" id="optRate" min="0.5" max="1.1" step="0.05"> <span id="optRateVal"></span></label>
+  <label class="row">跟讀模式
+    <select id="optMic">
+      <option value="auto">自動辨識(沒有支援時改錄音)</option>
+      <option value="record">只錄音回放(不判斷對錯)</option>
+    </select>
+  </label>
+  <p class="stat" id="statText"></p>
+  <p class="note">語音辨識為家長觀察用，幼兒發音辨識準確率有限，所以判定刻意放寬。Chrome 的語音辨識會把聲音送到 Google 伺服器；若在意隱私請選「只錄音回放」。</p>
+  <p class="note">圖片：Twemoji(Twitter/jdecked 與貢獻者)，依官方說明為 CC-BY 4.0。</p>
+  <div class="dlg-actions">
+    <button type="button" id="btnReset" class="danger">清除進度</button>
+    <button type="button" id="btnCloseSettings" class="primary">完成</button>
+  </div>
+</dialog>
+
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
